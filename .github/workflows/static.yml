@@ -1,29 +1,39 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Python script workflow
+name: Python Script Workflow
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: 
-       - main
-jobs:
+    branches:
+      - main
 
-  # Single deploy job since we're just deploying
+jobs:
   run_python_script:
-    
-      name: Run hello.py
+    name: Run hello.py
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
       
-      - name: Set up Python
-        uses: actions/setup-python@v2
-     
-        with:
-          python-version: '3.12'
-          
-     
-      - name: Run workflow.py
-        run: python workflow.py
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.12' # Use the Python version you need
+
+    - name: Run justtestingcode.py
+      run: python justtestingcode.py
+  run_python_script_2:
+    needs: run_python_script
+    name: Run hello.py 2
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.12' # Use the Python version you need
+
+    - name: Run workflow.py
+      run: python workflow.py
