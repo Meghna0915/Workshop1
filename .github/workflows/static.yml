@@ -22,5 +22,5 @@ jobs:
     - name: Install dependencies
       run: python -m pip install --upgrade pip && python -m pip install -r requirements.txt
 
-    - name: Run workshop1e.py
+    - name: Run workshop1.py
       run: python workshop1.py
