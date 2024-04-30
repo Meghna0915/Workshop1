@@ -19,7 +19,7 @@ jobs:
       with:
         python-version: '3.12' # Use the Python version you need
 
-    - name: Run workshop.py
-      run: python workshop.py
+    - name: Run workshop1.py
+      run: python workshop1.py
  
    
